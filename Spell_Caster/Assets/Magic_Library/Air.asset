@@ -18,7 +18,7 @@ MonoBehaviour:
   MagicParticle: {fileID: 1137015133137722, guid: d92b6e5cf2229004a90ee2e60a867f6f,
     type: 2}
   Effectiveness: Thunder
-  Immunity: Thunder
+  Immunity: Fire
   BaseDamage: 1
   SideEffect: AoE
   MagicSpeed: 1.75

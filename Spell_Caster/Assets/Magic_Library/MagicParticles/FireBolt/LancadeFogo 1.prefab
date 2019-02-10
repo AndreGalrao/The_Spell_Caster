@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4276958307106628}
   - component: {fileID: 198177260248806680}
   - component: {fileID: 199555790028733482}
-  - component: {fileID: 54091516173588864}
   - component: {fileID: 65215883989515106}
   m_Layer: 0
   m_Name: LancadeFogo 1
@@ -135,21 +134,6 @@ Transform:
   m_Father: {fileID: 4276958307106628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
---- !u!54 &54091516173588864
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1818224653091726}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65215883989515106
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -449,7 +433,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.990566, g: 0.84748423, b: 0.7429245, a: 1}
+      maxColor: {r: 0.9433962, g: 0.37837094, b: 0.14684942, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1474,8 +1458,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.9245283, g: 0.38147417, b: 0.09158063, a: 1}
+        key1: {r: 0.8867924, g: 0.2133098, b: 0.071110725, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 1}
@@ -9514,8 +9498,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.33053562, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.8228635, b: 0.3726415, a: 1}
+      minColor: {r: 1, g: 0.27234694, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.75722295, b: 0.13679248, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

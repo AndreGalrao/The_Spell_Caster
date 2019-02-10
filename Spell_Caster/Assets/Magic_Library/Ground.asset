@@ -18,7 +18,7 @@ MonoBehaviour:
   MagicParticle: {fileID: 1265848542522652, guid: 354102b839f528b489020e58dce39c8b,
     type: 2}
   Effectiveness: Water
-  Immunity: Water
+  Immunity: Thunder
   BaseDamage: 1
   SideEffect: Slow
   MagicSpeed: 1.75

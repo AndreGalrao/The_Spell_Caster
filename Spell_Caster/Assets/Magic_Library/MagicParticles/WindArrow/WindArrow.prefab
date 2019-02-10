@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4080461744207260}
   - component: {fileID: 198097405136624628}
   - component: {fileID: 199447763182060848}
+  - component: {fileID: 65244640875203496}
   m_Layer: 0
   m_Name: WindArrow
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137015133137722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9757626, y: 1.132, z: 3.1802292}
+  m_LocalPosition: {x: 7.5239396, y: -4.443712, z: -2.4651444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4809182325912552}
@@ -164,6 +165,18 @@ Transform:
   m_Father: {fileID: 4080461744207260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: -0.000015258789, z: -0.000015258789}
+--- !u!65 &65244640875203496
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137015133137722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.38, z: 1.46}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &96391542677335592
 TrailRenderer:
   serializedVersion: 2
@@ -230,7 +243,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.11792451, g: 1, b: 0.21319732, a: 0.627451}
+      key0: {r: 0.45248798, g: 0.8773585, b: 0, a: 0.627451}
       key1: {r: 0.5330188, g: 1, b: 0.81441474, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -450,8 +463,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.67058825, g: 1, b: 0.73640025, a: 1}
-      maxColor: {r: 0.6431373, g: 1, b: 0.68399745, a: 1}
+      minColor: {r: 0.7068816, g: 0.9339623, b: 0.36565503, a: 1}
+      maxColor: {r: 0.50479716, g: 0.8584906, b: 0.1579299, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1476,8 +1489,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.4558007, g: 0.8392157, b: 0.17647058, a: 0}
+        key1: {r: 0.57791907, g: 0.9339623, b: 0.24230155, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4984,7 +4997,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.76087016, g: 0.99300003, b: 0.9027273, a: 1}
+      maxColor: {r: 0.66040415, g: 0.8867924, b: 0.3890174, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9526,7 +9539,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.661928, g: 0.77599996, b: 0.72554505, a: 1}
+      maxColor: {r: 0.61299545, g: 0.7830189, b: 0.380429, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14062,8 +14075,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5784977, g: 0.9811321, b: 0.66099405, a: 1}
-        key1: {r: 0.273, g: 1, b: 0.5937581, a: 1}
+        key0: {r: 0.5676182, g: 0.8867924, b: 0.28025985, a: 1}
+        key1: {r: 0.5491638, g: 0.8301887, b: 0.26237094, a: 1}
         key2: {r: 0.273, g: 1, b: 0.5937581, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -14496,9 +14509,9 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 4
-    angle: 20
-    length: 5
+    type: 8
+    angle: 12.79
+    length: 0.21
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
@@ -14527,7 +14540,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.05
+      value: 0.1
       mode: 0
       spread: 0
       speed:

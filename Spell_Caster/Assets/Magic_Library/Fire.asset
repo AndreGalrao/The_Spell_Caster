@@ -18,7 +18,7 @@ MonoBehaviour:
   MagicParticle: {fileID: 1818224653091726, guid: b134fb6fc440c2749bf7f9012b213701,
     type: 2}
   Effectiveness: Air
-  Immunity: Air
+  Immunity: Water
   BaseDamage: 1
   SideEffect: Burn
   MagicSpeed: 1.75

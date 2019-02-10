@@ -8,7 +8,7 @@ public class Enemy_Attributes : ScriptableObject {
 
     //Atributos do inimigo
     public Magic_Attributes EnemyType;
-    public string EnemyHP;
+    public float EnemyHP;
     public GameObject EnemyModel;
     public float EnemySpeed;
     

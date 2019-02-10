@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4061206750601316}
   - component: {fileID: 198396637193476640}
   - component: {fileID: 199932847312638952}
+  - component: {fileID: 65239891215875464}
   m_Layer: 0
   m_Name: ThunderBird
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343925409891402}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 2.4231138, y: 1.55, z: -2.3360481}
+  m_LocalPosition: {x: 5.224251, y: -8.686401, z: 1.9698477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4251393731346680}
@@ -164,6 +165,18 @@ Transform:
   m_Father: {fileID: 4061206750601316}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65239891215875464
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343925409891402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.9, z: 0.82}
+  m_Center: {x: 0, y: 0, z: -0.04}
 --- !u!96 &96151489599900456
 TrailRenderer:
   serializedVersion: 2

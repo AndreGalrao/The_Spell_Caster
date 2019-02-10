@@ -18,7 +18,7 @@ MonoBehaviour:
   MagicParticle: {fileID: 1735317386212354, guid: da6fb995209f3e44d9ac64ae9b4129c6,
     type: 2}
   Effectiveness: Fire
-  Immunity: Fire
+  Immunity: Ground
   BaseDamage: 1
   SideEffect: Heal
   MagicSpeed: 1.75

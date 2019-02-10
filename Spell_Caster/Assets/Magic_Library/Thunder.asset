@@ -18,7 +18,7 @@ MonoBehaviour:
   MagicParticle: {fileID: 1343925409891402, guid: 556c02abd5c966542b9b44c5ae55c671,
     type: 2}
   Effectiveness: Ground
-  Immunity: Ground
+  Immunity: Air
   BaseDamage: 1
   SideEffect: Paralyze
   MagicSpeed: 1.75
