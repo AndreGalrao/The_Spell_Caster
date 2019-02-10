@@ -15,7 +15,8 @@ MonoBehaviour:
   MagicName: Fire
   MagicType: Fire
   MagicSprite: {fileID: 0}
-  MagicParticle: {fileID: 100000, guid: c13d1f8461a3d9c40b148b95b8382b6f, type: 3}
+  MagicParticle: {fileID: 1818224653091726, guid: b134fb6fc440c2749bf7f9012b213701,
+    type: 2}
   Effectiveness: Air
   Immunity: Air
   BaseDamage: 1
