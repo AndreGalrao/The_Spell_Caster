@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2786d681a73aac54eba2c67cac07a7d6, type: 3}
+  m_Name: Thunder
+  m_EditorClassIdentifier: 
+  MagicIndex: 4
+  MagicName: Thunder
+  MagicType: Thunder
+  MagicSprite: {fileID: 0}
+  MagicParticle: {fileID: 1343925409891402, guid: 556c02abd5c966542b9b44c5ae55c671,
+    type: 2}
+  Effectiveness: Ground
+  Immunity: Ground
+  BaseDamage: 1
+  SideEffect: Paralyze
+  MagicSpeed: 1.75
+  MagicCharacter: E
