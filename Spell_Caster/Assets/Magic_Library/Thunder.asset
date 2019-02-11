@@ -23,3 +23,4 @@ MonoBehaviour:
   SideEffect: Paralyze
   MagicSpeed: 1.75
   MagicCharacter: E
+  Lifespan: 2

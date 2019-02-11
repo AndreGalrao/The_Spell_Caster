@@ -15,3 +15,4 @@ MonoBehaviour:
   EnemyHP: 5
   EnemyModel: {fileID: 1985034809507958, guid: 7da600a730e8528419a427a2007e3723, type: 2}
   EnemySpeed: 5
+  EnemyWeight: 4

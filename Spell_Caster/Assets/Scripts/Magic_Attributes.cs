@@ -18,6 +18,7 @@ public class Magic_Attributes : ScriptableObject {
     public string SideEffect;
     public float MagicSpeed;
     public string MagicCharacter;
+    public float Lifespan;
 
 
 	

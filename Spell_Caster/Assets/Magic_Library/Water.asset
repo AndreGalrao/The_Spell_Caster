@@ -23,3 +23,4 @@ MonoBehaviour:
   SideEffect: Heal
   MagicSpeed: 1.75
   MagicCharacter: T
+  Lifespan: 2

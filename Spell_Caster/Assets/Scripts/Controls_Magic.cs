@@ -52,7 +52,8 @@ public class Controls_Magic : MonoBehaviour {
                     string _immunity = infos.MagicLibrary["Water"].magic.Immunity;
                     GameObject _clone = infos.MagicLibrary["Water"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Water"].magic.MagicSpeed;
-                    LaunchBasicMagic(_clone,speed,_effectiveness, _immunity, Dmg);
+                    float _lifespan = infos.MagicLibrary["Water"].magic.Lifespan;
+                    LaunchBasicMagic(_clone,speed,_effectiveness, _immunity, Dmg, _lifespan);
                     break;
                 }
 
@@ -63,7 +64,8 @@ public class Controls_Magic : MonoBehaviour {
                     string _immunity = infos.MagicLibrary["Fire"].magic.Immunity;
                     GameObject _clone = infos.MagicLibrary["Fire"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Fire"].magic.MagicSpeed;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg);
+                    float _lifespan = infos.MagicLibrary["Fire"].magic.Lifespan;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
                     break;
                 }
             case Controls_Character.Magias.Air:
@@ -73,7 +75,8 @@ public class Controls_Magic : MonoBehaviour {
                     string _immunity = infos.MagicLibrary["Air"].magic.Immunity;
                     GameObject _clone = infos.MagicLibrary["Air"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Air"].magic.MagicSpeed;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg);
+                    float _lifespan = infos.MagicLibrary["Air"].magic.Lifespan;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
                     break;
                 }
             case Controls_Character.Magias.Thunder:
@@ -83,7 +86,8 @@ public class Controls_Magic : MonoBehaviour {
                     string _immunity = infos.MagicLibrary["Thunder"].magic.Immunity;
                     GameObject _clone = infos.MagicLibrary["Thunder"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Thunder"].magic.MagicSpeed;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg);
+                    float _lifespan = infos.MagicLibrary["Thunder"].magic.Lifespan;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
                     break;
                 }
             case Controls_Character.Magias.Earth:
@@ -93,7 +97,8 @@ public class Controls_Magic : MonoBehaviour {
                     string _immunity = infos.MagicLibrary["Earth"].magic.Immunity;
                     GameObject _clone = infos.MagicLibrary["Earth"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Earth"].magic.MagicSpeed;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg);
+                    float _lifespan = infos.MagicLibrary["Earth"].magic.Lifespan;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
                     break;
                 }
 
@@ -101,7 +106,7 @@ public class Controls_Magic : MonoBehaviour {
         }
 	}
 
-    void LaunchBasicMagic(GameObject Magic, float Speed, string Effectiveness, string Immunity, float bsdmg)
+    void LaunchBasicMagic(GameObject Magic, float Speed, string Effectiveness, string Immunity, float bsdmg, float lifespan)
     {
         //Método de lançamento, se apertar o botão esquerdo, depois que foi chamado, pega os parametros que foi puxado.
         if(Input.GetMouseButtonDown(0))
@@ -128,6 +133,7 @@ public class Controls_Magic : MonoBehaviour {
             magic_Information.LaunchedMagicTypeEff = Effectiveness;
             magic_Information.LaunchedBaseDamage = bsdmg;
             magic_Information.LaunchedMagicTypeImm = Immunity;
+            magic_Information.LaunchedLifespan = lifespan;
 
             print(Immunity);
 

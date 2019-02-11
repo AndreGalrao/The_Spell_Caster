@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour {
 
     Enemy_Spawn infoenemy;
+    Rigidbody EnemyPhysics;
 
     [SerializeField]
     float _enemyHP;
@@ -12,7 +13,7 @@ public class Enemy_AI : MonoBehaviour {
     
 
 
-    int multiplicadordeefetividade = 1;
+    float multiplicadordeefetividade = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,11 @@ public class Enemy_AI : MonoBehaviour {
         _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP;
         gameObject.tag = "Enemy";
 
-        print(infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.Immunity);
+        EnemyPhysics = gameObject.GetComponent<Rigidbody>();
+        EnemyPhysics.mass = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyWeight;
+
+
+        //print(infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.Immunity);
 
         //print(gameObject.name);
         //infoenemy.EnemyLibrary[gameObject.name];
@@ -77,7 +82,7 @@ public class Enemy_AI : MonoBehaviour {
 
             else
             {
-                multiplicadordeefetividade = 1;
+                multiplicadordeefetividade = 0.1f;
                 Formuladedano(collision, multiplicadordeefetividade);
             }
 
@@ -88,10 +93,14 @@ public class Enemy_AI : MonoBehaviour {
         
     }
 
-    void Formuladedano(Collision magic, int mult)
+    void Formuladedano(Collision magic, float mult)
     {
+        
         //Quando o objeto for colidido, ele vai pegar a informação do dano base que tem aquele objeto
         float BaseDmg = magic.gameObject.GetComponent<Magic_Information>().LaunchedBaseDamage;
+
+        Magic_Information call = magic.gameObject.GetComponent<Magic_Information>(); //pegar info do outro script
+        call.DestroyMagicApplyEffect(); //chamar o outro método
 
         //Dependendo de onde ele foi chamado, ele vai multiplicar.
         _enemyHP -= BaseDmg * mult;
