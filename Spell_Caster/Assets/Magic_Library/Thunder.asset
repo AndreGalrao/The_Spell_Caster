@@ -15,7 +15,7 @@ MonoBehaviour:
   MagicName: Thunder
   MagicType: Thunder
   MagicSprite: {fileID: 0}
-  MagicParticle: {fileID: 1343925409891402, guid: 556c02abd5c966542b9b44c5ae55c671,
+  MagicParticle: {fileID: 1913714153154482, guid: 4387455443b6ee34baa6bb6ee804fd6d,
     type: 2}
   Effectiveness: Ground
   Immunity: Air
