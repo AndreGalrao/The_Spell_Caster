@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy_Spawn : MonoBehaviour {
 
 
-    List<GameObject> screenenemylist = new List<GameObject>();
+    public List<GameObject> screenenemylist = new List<GameObject>();
 
     int Horde;
     int EnemyQuantity;
@@ -44,19 +44,20 @@ public class Enemy_Spawn : MonoBehaviour {
 
         
         //Cria a quantidade de inimigos que a horda vai ter
-        EnemyQuantity = Random.Range(20, 30);
+        EnemyQuantity = Random.Range(1, 2);
         //Passa essa quantidade para a Coroutine
         StartCoroutine(EnemyHordeSpawn(EnemyQuantity));
-        
-		
-	}
+
+
+
+    }
 
     IEnumerator EnemyHordeSpawn(int enemyquantity)
     {
         //***Obs, se o terreno ficar muito pequeno,os inimigos passam, se ficar muito grande, eles se concentram numa área
         //*** Talvez dê pra usar a posição do objeto como ponto de referencia.
         //Vai spawnar inimigos na quantidade que foi pre-definida
-        for (int eq = enemyquantity; eq > 0; eq--)
+        for (int eq = enemyquantity; eq >= 0; eq--)
         {
             //espera um tempo para spawnar os inimigos
             yield return new WaitForSeconds(SpawnInterval);
@@ -76,21 +77,32 @@ public class Enemy_Spawn : MonoBehaviour {
             
             //Adiciona os inimigos em uma lista para se ter controle;
             screenenemylist.Add(screen_enemy);
+
             /*print("A quantidade de inimigos na tela é" + screenenemylist.Count);
             print("A quantidade de inimigos para lançar ainda é:" + eq);*/
+            print(screenenemylist.Count);
+
+
         }
+
+        
+        //*************Detectar quando a contagem de inimigos na tela zerou.*****************
 
         /*foreach (GameObject enemys in screenenemylist)
         {
             print(enemys.name);
         }*/
 
-      
+
 
     }
 
-
-  
-
+    private void Update()
+    {
+        if (screenenemylist.Count == 0)
+        {
+            print("WaveEnded");
+        }
+    }
 
 }

@@ -45,7 +45,10 @@ public class Enemy_AI : MonoBehaviour {
         gameObject.transform.position -= transform.forward * infoenemy.EnemyLibrary[gameObject.name].enemy.EnemySpeed * Time.deltaTime;
 
         if (_enemyHP <= 0)
+        {
             Destroy(gameObject);
+            infoenemy.screenenemylist.Remove(gameObject);
+        }
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -104,6 +107,6 @@ public class Enemy_AI : MonoBehaviour {
 
         //Dependendo de onde ele foi chamado, ele vai multiplicar.
         _enemyHP -= BaseDmg * mult;
-        print(_enemyHP);
+        //print(_enemyHP);
     }
 }
