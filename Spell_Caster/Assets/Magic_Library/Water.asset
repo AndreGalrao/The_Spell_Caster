@@ -15,7 +15,7 @@ MonoBehaviour:
   MagicName: Water
   MagicType: Water
   MagicSprite: {fileID: 0}
-  MagicParticle: {fileID: 1735317386212354, guid: da6fb995209f3e44d9ac64ae9b4129c6,
+  MagicParticle: {fileID: 1434026237784018, guid: 84935d22484d4fd4d80577055662aa49,
     type: 2}
   Effectiveness: Fire
   Immunity: Ground
