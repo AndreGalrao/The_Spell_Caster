@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beccfc61324cf6e47a4039145835c497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenenemylist: []
   SpawnInterval: 2
   EnemyLibrary:
     m_keys:

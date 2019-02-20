@@ -15,7 +15,7 @@ MonoBehaviour:
   MagicName: Ground
   MagicType: Ground
   MagicSprite: {fileID: 0}
-  MagicParticle: {fileID: 1265848542522652, guid: 354102b839f528b489020e58dce39c8b,
+  MagicParticle: {fileID: 1458902281219782, guid: 8dcab516527e6a74c895d802ee0ae496,
     type: 2}
   Effectiveness: Water
   Immunity: Thunder
