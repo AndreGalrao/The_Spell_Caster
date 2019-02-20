@@ -16,3 +16,4 @@ MonoBehaviour:
   EnemyModel: {fileID: 1943973471197542, guid: 4a9154a9b02bda0409206f1bfe6be452, type: 2}
   EnemySpeed: 8
   EnemyWeight: 2
+  DestroyDistance: 3

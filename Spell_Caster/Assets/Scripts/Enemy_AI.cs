@@ -5,21 +5,27 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour {
 
     Enemy_Spawn infoenemy;
+    Enemy_Waves infowaves;
     Rigidbody EnemyPhysics;
 
-    [SerializeField]
+    GameObject Player;
+
+    //[SerializeField]
     float _enemyHP;
-
-    
-
+    float _destroyAfterPass;
 
     float multiplicadordeefetividade = 1;
 
 	// Use this for initialization
 	void Start () {
-
+        
+        //Procura o objeto do Spawn do inimigo e pega os scripts.
         infoenemy = GameObject.Find("EnemySpawnPoint").GetComponent<Enemy_Spawn>();
-        _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP;
+        infowaves = GameObject.Find("WaveController").GetComponent<Enemy_Waves>();
+        //Procura o jogador para comparar mais pra frente a posição
+        Player = GameObject.Find("Player");
+        _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP; //Coloca no dicionario o nome do inimigo e puxa o HP
+        _destroyAfterPass = infoenemy.EnemyLibrary[gameObject.name].enemy.DestroyDistance;
         gameObject.tag = "Enemy";
 
         EnemyPhysics = gameObject.GetComponent<Rigidbody>();
@@ -44,10 +50,18 @@ public class Enemy_AI : MonoBehaviour {
          * toda chave do dicionário tá associada a um scriptable object */
         gameObject.transform.position -= transform.forward * infoenemy.EnemyLibrary[gameObject.name].enemy.EnemySpeed * Time.deltaTime;
 
+        //Compara o Z do inimigo com o Z do personagem, se o Z do inimigo for menor, significa que 
+        //O inimigo passou o player, e aí já destrói.
+        if (gameObject.transform.position.z < Player.transform.position.z - _destroyAfterPass)
+        {
+            infowaves.DestroyandCheck(gameObject);
+        }
+
         if (_enemyHP <= 0)
         {
-            Destroy(gameObject);
-            infoenemy.screenenemylist.Remove(gameObject);
+            infowaves.DestroyandCheck(gameObject);
+            
+            //Criar um método próprio para destruir e lista
         }
 	}
 

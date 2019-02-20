@@ -12,5 +12,6 @@ public class Enemy_Attributes : ScriptableObject {
     public GameObject EnemyModel;
     public float EnemySpeed;
     public float EnemyWeight;
+    public float DestroyDistance;
     
 }

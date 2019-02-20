@@ -8,9 +8,10 @@ public class Enemy_Spawn : MonoBehaviour {
 
     public List<GameObject> screenenemylist = new List<GameObject>();
 
-    int Horde;
     int EnemyQuantity;
+    public int StartWave;
     public float SpawnInterval = 2;
+
     public EnemyDictionary EnemyLibrary; //Cria uma váriavel para puxar e armazenar inimigos
     public IDictionary<string, EnemyMethods> Enemy_Dictionary //Cria um dicionário serializável com String e o método construtor
         //que pega todos os atributos dos inimigos
@@ -18,6 +19,12 @@ public class Enemy_Spawn : MonoBehaviour {
         get { return EnemyLibrary; }
         set { EnemyLibrary.CopyFrom(value); }
     }
+
+    [SerializeField]
+    int MinWaveSpawn;
+
+    [SerializeField]
+    int MaxWaveSpawn;
 
 
     #region Atributos do Terreno
@@ -27,8 +34,9 @@ public class Enemy_Spawn : MonoBehaviour {
     #endregion
 
 
+
     // Use this for initialization
-    void Start () {
+   void Start () {
 
         #region InfoTerreno
         #region Achar Objeto Terreno
@@ -42,14 +50,16 @@ public class Enemy_Spawn : MonoBehaviour {
         #endregion
         #endregion
 
-        
+        StartSpawn(StartWave);
+
+    }
+
+    public void StartSpawn(int CurrentWave)
+    {
         //Cria a quantidade de inimigos que a horda vai ter
-        EnemyQuantity = Random.Range(1, 2);
+        EnemyQuantity = Random.Range(MinWaveSpawn, MaxWaveSpawn) + CurrentWave;
         //Passa essa quantidade para a Coroutine
         StartCoroutine(EnemyHordeSpawn(EnemyQuantity));
-
-
-
     }
 
     IEnumerator EnemyHordeSpawn(int enemyquantity)
@@ -80,7 +90,7 @@ public class Enemy_Spawn : MonoBehaviour {
 
             /*print("A quantidade de inimigos na tela é" + screenenemylist.Count);
             print("A quantidade de inimigos para lançar ainda é:" + eq);*/
-            print(screenenemylist.Count);
+            //print(screenenemylist.Count);
 
 
         }
@@ -95,14 +105,6 @@ public class Enemy_Spawn : MonoBehaviour {
 
 
 
-    }
-
-    private void Update()
-    {
-        if (screenenemylist.Count == 0)
-        {
-            print("WaveEnded");
-        }
     }
 
 }
