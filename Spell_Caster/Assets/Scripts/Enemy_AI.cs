@@ -7,6 +7,7 @@ public class Enemy_AI : MonoBehaviour {
     Enemy_Spawn infoenemy;
     Enemy_Waves infowaves;
     Player_LifeSettings infolifes;
+    Game_PointComboControl infopoints;
     Rigidbody EnemyPhysics;
 
     GameObject Player;
@@ -24,6 +25,7 @@ public class Enemy_AI : MonoBehaviour {
         infoenemy = GameObject.Find("EnemySpawnPoint").GetComponent<Enemy_Spawn>();
         infowaves = GameObject.Find("WaveController").GetComponent<Enemy_Waves>();
         infolifes = GameObject.Find("Player").GetComponent<Player_LifeSettings>();
+        infopoints = GameObject.Find("MasterControl").GetComponent<Game_PointComboControl>();
         //Procura o jogador para comparar mais pra frente a posição
         Player = GameObject.Find("Player");
         _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP; //Coloca no dicionario o nome do inimigo e puxa o HP
@@ -58,6 +60,7 @@ public class Enemy_AI : MonoBehaviour {
         {
             infowaves.DestroyandCheck(gameObject);
             infolifes.TakeLive();
+            infopoints.LostLife();
         }
 
         if (_enemyHP <= 0)
@@ -79,12 +82,14 @@ public class Enemy_AI : MonoBehaviour {
         {
            
             //Atribui a uma nova variavel o valor da variavel do que foi colidido
+            //Pega a efetividade da magia que foi lançada. Caso essa efetividade seja igual ao tipo do personagem..
             string Effectiveness = collision.gameObject.GetComponent<Magic_Information>().LaunchedMagicTypeEff;
             if (Effectiveness == infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType)
             {
                 //Se possuir o mesmo nome do inimigo, toma o dobro de dano
                 multiplicadordeefetividade = 2;
                 print("It's Super Effective!");
+                infopoints.SuperEffective(); //Já que acertou o inimigo super efetivamente chama o método para dobrar pontos
                 Formuladedano(collision, multiplicadordeefetividade);
             }
 
@@ -94,14 +99,17 @@ public class Enemy_AI : MonoBehaviour {
             if (Immunity == infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType)
             {
                 multiplicadordeefetividade = 0;
+                infopoints.NotEffective(); //Para zerar o contador
                 print("It's not very effective...");
                 Formuladedano(collision, multiplicadordeefetividade);
                 
                 
             }
 
-            else
+            //Caso a efetividade não exista, e não é imunidade, ele considera que é qualquer magia que acertou.
+            if (Effectiveness != infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType)
             {
+                infopoints.NeutralEffective(); //5 pontos e zerar contador.
                 multiplicadordeefetividade = 0.1f;
                 Formuladedano(collision, multiplicadordeefetividade);
             }
