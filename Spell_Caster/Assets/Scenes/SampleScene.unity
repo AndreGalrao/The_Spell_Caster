@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.451178, g: 0.50093484, b: 0.5737884, a: 1}
+  m_IndirectSpecularColor: {r: 0.45117772, g: 0.5009344, b: 0.5737874, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,6 +354,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 42.756, y: 0, z: 0}
+--- !u!1 &860887792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860887794}
+  - component: {fileID: 860887793}
+  m_Layer: 0
+  m_Name: GameSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &860887793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860887792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31935c61f909404cbd4a46aa666edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &860887794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860887792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2632246, y: -5.481806, z: 5.31213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899354736
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +493,7 @@ GameObject:
   - component: {fileID: 1646786405}
   - component: {fileID: 1646786406}
   - component: {fileID: 1646786407}
+  - component: {fileID: 1646786408}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -585,3 +626,15 @@ MonoBehaviour:
   infos: {fileID: 1646786406}
   _magicp: {fileID: 114738439836807888, guid: 047b690eec577d64a81a0f11a54cee08, type: 2}
   Spell_Position: 2
+--- !u!114 &1646786408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1646786400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75d411bd2673bb418060795709c6c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Lifes: 3

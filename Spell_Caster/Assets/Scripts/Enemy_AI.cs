@@ -6,6 +6,7 @@ public class Enemy_AI : MonoBehaviour {
 
     Enemy_Spawn infoenemy;
     Enemy_Waves infowaves;
+    Player_LifeSettings infolifes;
     Rigidbody EnemyPhysics;
 
     GameObject Player;
@@ -22,6 +23,7 @@ public class Enemy_AI : MonoBehaviour {
         //Procura o objeto do Spawn do inimigo e pega os scripts.
         infoenemy = GameObject.Find("EnemySpawnPoint").GetComponent<Enemy_Spawn>();
         infowaves = GameObject.Find("WaveController").GetComponent<Enemy_Waves>();
+        infolifes = GameObject.Find("Player").GetComponent<Player_LifeSettings>();
         //Procura o jogador para comparar mais pra frente a posição
         Player = GameObject.Find("Player");
         _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP; //Coloca no dicionario o nome do inimigo e puxa o HP
@@ -55,6 +57,7 @@ public class Enemy_AI : MonoBehaviour {
         if (gameObject.transform.position.z < Player.transform.position.z - _destroyAfterPass)
         {
             infowaves.DestroyandCheck(gameObject);
+            infolifes.TakeLive();
         }
 
         if (_enemyHP <= 0)
