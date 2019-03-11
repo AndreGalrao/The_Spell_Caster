@@ -15,7 +15,7 @@ public class Magic_Attributes : ScriptableObject {
     public string Effectiveness;
     public string Immunity;
     public float BaseDamage;
-    public string SideEffect;
+    public Status_Attributes MagicStatus;
     public float MagicSpeed;
     public string MagicCharacter;
     public float Lifespan;

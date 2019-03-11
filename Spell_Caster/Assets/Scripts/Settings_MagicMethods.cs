@@ -25,3 +25,17 @@ public class EnemyMethods
         this.enemy = enemy;
     }
 }
+
+[System.Serializable]
+public class StatusMethods
+{
+
+    public Status_Attributes status;
+
+    public StatusMethods(Status_Attributes status)
+    {
+        this.status = status;
+    }
+}
+
+

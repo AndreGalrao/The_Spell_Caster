@@ -9,6 +9,7 @@ public class Magic_Information : MonoBehaviour {
     public string LaunchedMagicTypeImm;
     public float LaunchedBaseDamage;
     public float LaunchedLifespan;
+    public Status_Attributes LaunchedStatus;
 
     private void Update()
     {

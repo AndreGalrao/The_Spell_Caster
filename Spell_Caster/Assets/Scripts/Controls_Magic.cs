@@ -53,7 +53,8 @@ public class Controls_Magic : MonoBehaviour {
                     GameObject _clone = infos.MagicLibrary["Water"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Water"].magic.MagicSpeed;
                     float _lifespan = infos.MagicLibrary["Water"].magic.Lifespan;
-                    LaunchBasicMagic(_clone,speed,_effectiveness, _immunity, Dmg, _lifespan);
+                    Status_Attributes _mgstatus = infos.MagicLibrary["Water"].magic.MagicStatus;
+                    LaunchBasicMagic(_clone,speed,_effectiveness, _immunity, Dmg, _lifespan, _mgstatus);
                     break;
                 }
 
@@ -65,7 +66,8 @@ public class Controls_Magic : MonoBehaviour {
                     GameObject _clone = infos.MagicLibrary["Fire"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Fire"].magic.MagicSpeed;
                     float _lifespan = infos.MagicLibrary["Fire"].magic.Lifespan;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
+                    Status_Attributes _mgstatus = infos.MagicLibrary["Fire"].magic.MagicStatus;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan, _mgstatus);
                     break;
                 }
             case Controls_Character.Magias.Air:
@@ -76,7 +78,8 @@ public class Controls_Magic : MonoBehaviour {
                     GameObject _clone = infos.MagicLibrary["Air"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Air"].magic.MagicSpeed;
                     float _lifespan = infos.MagicLibrary["Air"].magic.Lifespan;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
+                    Status_Attributes _mgstatus = infos.MagicLibrary["Air"].magic.MagicStatus;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan, _mgstatus);
                     break;
                 }
             case Controls_Character.Magias.Thunder:
@@ -87,7 +90,8 @@ public class Controls_Magic : MonoBehaviour {
                     GameObject _clone = infos.MagicLibrary["Thunder"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Thunder"].magic.MagicSpeed;
                     float _lifespan = infos.MagicLibrary["Thunder"].magic.Lifespan;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
+                    Status_Attributes _mgstatus = infos.MagicLibrary["Thunder"].magic.MagicStatus;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan, _mgstatus);
                     break;
                 }
             case Controls_Character.Magias.Earth:
@@ -98,7 +102,8 @@ public class Controls_Magic : MonoBehaviour {
                     GameObject _clone = infos.MagicLibrary["Earth"].magic.MagicParticle;
                     float speed = infos.MagicLibrary["Earth"].magic.MagicSpeed;
                     float _lifespan = infos.MagicLibrary["Earth"].magic.Lifespan;
-                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan);
+                    Status_Attributes _mgstatus = infos.MagicLibrary["Earth"].magic.MagicStatus;
+                    LaunchBasicMagic(_clone, speed, _effectiveness, _immunity, Dmg, _lifespan, _mgstatus);
                     break;
                 }
 
@@ -106,7 +111,7 @@ public class Controls_Magic : MonoBehaviour {
         }
 	}
 
-    void LaunchBasicMagic(GameObject Magic, float Speed, string Effectiveness, string Immunity, float bsdmg, float lifespan)
+    void LaunchBasicMagic(GameObject Magic, float Speed, string Effectiveness, string Immunity, float bsdmg, float lifespan, Status_Attributes status)
     {
         //Método de lançamento, se apertar o botão esquerdo, depois que foi chamado, pega os parametros que foi puxado.
         if(Input.GetMouseButtonDown(0))
@@ -134,6 +139,8 @@ public class Controls_Magic : MonoBehaviour {
             magic_Information.LaunchedBaseDamage = bsdmg;
             magic_Information.LaunchedMagicTypeImm = Immunity;
             magic_Information.LaunchedLifespan = lifespan;
+            magic_Information.LaunchedStatus = status;
+          
 
             print(Immunity);
 

@@ -20,7 +20,7 @@ MonoBehaviour:
   Effectiveness: Air
   Immunity: Water
   BaseDamage: 1
-  SideEffect: Burn
+  MagicStatus: {fileID: 11400000, guid: 8029074e699c24b4bb8bff5d2844a732, type: 2}
   MagicSpeed: 1.75
   MagicCharacter: Q
   Lifespan: 2

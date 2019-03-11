@@ -4,28 +4,50 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour {
 
+    Enemy_AI_Status statusinfo;
     Enemy_Spawn infoenemy;
     Enemy_Waves infowaves;
+
+    float SpeedPenalty = 1;
+    float DamageOverTime;
+
+    [HideInInspector]
+    public Status_Dictionary statusdic;
+    public Status_Attributes current_status;
     Player_LifeSettings infolifes;
     Game_PointComboControl infopoints;
     Rigidbody EnemyPhysics;
 
     GameObject Player;
 
-    //[SerializeField]
+    [SerializeField]
     float _enemyHP;
     float _destroyAfterPass;
 
     float multiplicadordeefetividade = 1;
 
-	// Use this for initialization
-	void Start () {
+    Status_Attributes Burned;
+    Status_Attributes Wet;
+    Status_Attributes Marked;
+    Status_Attributes Slowed;
+    Status_Attributes Paralyzed;
+    Status_Attributes None;
+
+    //Status statusbrn = 
+
+    // Use this for initialization
+    void Start () {
+
         
+
+
         //Procura o objeto do Spawn do inimigo e pega os scripts.
         infoenemy = GameObject.Find("EnemySpawnPoint").GetComponent<Enemy_Spawn>();
         infowaves = GameObject.Find("WaveController").GetComponent<Enemy_Waves>();
         infolifes = GameObject.Find("Player").GetComponent<Player_LifeSettings>();
         infopoints = GameObject.Find("MasterControl").GetComponent<Game_PointComboControl>();
+        statusdic = GameObject.Find("StatusControl").GetComponent<Status_Dictionary>();
+        
         //Procura o jogador para comparar mais pra frente a posição
         Player = GameObject.Find("Player");
         _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP; //Coloca no dicionario o nome do inimigo e puxa o HP
@@ -34,6 +56,15 @@ public class Enemy_AI : MonoBehaviour {
 
         EnemyPhysics = gameObject.GetComponent<Rigidbody>();
         EnemyPhysics.mass = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyWeight;
+
+        Burned = statusdic.StatusLibrary["Burn"].status;
+        Wet = statusdic.StatusLibrary["Soak"].status;
+        Marked = statusdic.StatusLibrary["Mark"].status;
+        Slowed = statusdic.StatusLibrary["Slow"].status;
+        Paralyzed = statusdic.StatusLibrary["Paralyze"].status;
+        None = statusdic.StatusLibrary["Normal"].status;
+
+        current_status = statusdic.StatusLibrary["Normal"].status; //O status atual do inimigo vai ser pego da biblioteca e o atributo dela
 
 
         //print(infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.Immunity);
@@ -46,13 +77,17 @@ public class Enemy_AI : MonoBehaviour {
 	void Update () {
 
 
+
         //print(infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType);
         /* O nome do inimigo vai ser o nome de sua chave no dicionário.
          * Ele vai colocar esse nome no game object que irá ser instanciado
          * Nesse script ele vai consultar a biblioteca e vai usar como referencia, o nome do objeto que é o mesmo nome da chave
          * ele vai pegar as propriedades
          * toda chave do dicionário tá associada a um scriptable object */
-        gameObject.transform.position -= transform.forward * infoenemy.EnemyLibrary[gameObject.name].enemy.EnemySpeed * Time.deltaTime;
+
+       
+        gameObject.transform.position -= transform.forward * infoenemy.EnemyLibrary[gameObject.name].enemy.EnemySpeed 
+          * SpeedPenalty * Time.deltaTime;
 
         //Compara o Z do inimigo com o Z do personagem, se o Z do inimigo for menor, significa que 
         //O inimigo passou o player, e aí já destrói.
@@ -69,6 +104,8 @@ public class Enemy_AI : MonoBehaviour {
             
             //Criar um método próprio para destruir e lista
         }
+
+        
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -91,6 +128,7 @@ public class Enemy_AI : MonoBehaviour {
                 print("It's Super Effective!");
                 infopoints.SuperEffective(); //Já que acertou o inimigo super efetivamente chama o método para dobrar pontos
                 Formuladedano(collision, multiplicadordeefetividade);
+                StatusChance(collision.gameObject.GetComponent<Magic_Information>().LaunchedStatus);
             }
 
             //Se por acaso a magia tiver imunidade ao mesmo tipo do inimigo, não causa dano.
@@ -134,4 +172,80 @@ public class Enemy_AI : MonoBehaviour {
         _enemyHP -= BaseDmg * mult;
         //print(_enemyHP);
     }
+
+    void StatusChance(Status_Attributes status)
+    {
+        int percentage = Random.Range(0, 10);
+        if (percentage <=9)
+        {
+            current_status = status;
+            StatusCheck(current_status.StatusEffect);
+        }
+    }
+
+    void StatusCheck(string Effect)
+    {
+        //Funciona tipo um switch, vai checar sempre quando o status ocorrer ou quando acabar.
+        if(Effect == Burned.StatusEffect)
+        {
+            SpeedPenalty = Burned.Speed_Penalty_Multiplier;
+            DamageOverTime = Burned.Damage_OverTime;
+            StartCoroutine(CreateStatus(DamageOverTime));
+        }
+
+        if (Effect == Wet.StatusEffect)
+        {
+            SpeedPenalty = Wet.Speed_Penalty_Multiplier;
+            DamageOverTime = Wet.Damage_OverTime;
+            StartCoroutine(CreateStatus(DamageOverTime));
+        }
+
+        if (Effect == Paralyzed.StatusEffect)
+        {
+            SpeedPenalty = Paralyzed.Speed_Penalty_Multiplier;
+            DamageOverTime = Paralyzed.Damage_OverTime;
+            StartCoroutine(CreateStatus(DamageOverTime));
+        }
+
+        if (Effect == Slowed.StatusEffect)
+        {
+            SpeedPenalty = Slowed.Speed_Penalty_Multiplier;
+            DamageOverTime = Slowed.Damage_OverTime;
+            StartCoroutine(CreateStatus(DamageOverTime));
+        }
+
+        if (Effect == Marked.StatusEffect)
+        {
+            SpeedPenalty = Marked.Speed_Penalty_Multiplier;
+            DamageOverTime = Marked.Damage_OverTime;
+            StartCoroutine(CreateStatus(DamageOverTime));
+        }
+
+        if (Effect == None.StatusEffect)
+        {
+            SpeedPenalty = None.Speed_Penalty_Multiplier;
+            DamageOverTime = None.Damage_OverTime;
+
+        }
+    }
+
+    IEnumerator CreateStatus(float dot)
+    {
+        for (int i = 2; i >= 0; i--)
+        {
+            yield return new WaitForSeconds(1);
+            _enemyHP -= dot;
+
+        }
+
+        //Joga o status para normal e manda checar os efeitos.
+        current_status = statusdic.StatusLibrary["Normal"].status;
+        StatusCheck(current_status.StatusEffect);
+
+
+    }
+
+
+
+    
 }

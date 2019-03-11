@@ -10,6 +10,7 @@ public class Game_PointComboControl : Game_MasterSettings {
     {
         ComboCounter += 1; //Aumenta o combo counter em um
         GameScore += 10 * ComboCounter; //Ganha 10 pontos + adiciona na contagem do combo
+       
         
     }
 
@@ -32,5 +33,7 @@ public class Game_PointComboControl : Game_MasterSettings {
         ComboCounter = 0; //Zera o contador de combos
         GameScore -= 5; //Perde 5 pontos
     }
+
+    
 
 }

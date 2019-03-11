@@ -20,7 +20,7 @@ MonoBehaviour:
   Effectiveness: Fire
   Immunity: Ground
   BaseDamage: 1
-  SideEffect: Heal
+  MagicStatus: {fileID: 11400000, guid: 3255516767682994ebfd316bf1ac50b1, type: 2}
   MagicSpeed: 1.75
   MagicCharacter: T
   Lifespan: 2

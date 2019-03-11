@@ -22,6 +22,9 @@ public class MagicDictionary : SerializableDictionary<string, MagicMethods> { }
 public class EnemyDictionary : SerializableDictionary<string, EnemyMethods> { }
 
 [Serializable]
+public class StatusDictionary : SerializableDictionary<string, StatusMethods> { }
+
+[Serializable]
 public class MyClass
 {
     public int i;
