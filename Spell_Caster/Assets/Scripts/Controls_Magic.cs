@@ -16,7 +16,6 @@ public class Controls_Magic : MonoBehaviour {
         Combine_RightClick
     };
 
-    [Header("Posição do Spawn")]
     [Range(0, 5)]
     public float Spell_Position;
 

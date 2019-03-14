@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player_LifeSettings : Game_MasterSettings {
     //Herdado diretamente das configs mestres
-    [Header("Número de vidas")]
     public int Player_Lifes = 3;
 
     //O inimigo passará pelo personagem e chamará esse método

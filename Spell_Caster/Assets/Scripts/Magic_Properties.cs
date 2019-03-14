@@ -5,7 +5,6 @@ using UnityEngine;
 public class Magic_Properties : MonoBehaviour {
 
 
-    //Método usado para lançar a magia.
     public void MagicLaunched(GameObject MagicObject, float MagicSpeed)
     {
         Rigidbody rb;

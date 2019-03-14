@@ -13,7 +13,6 @@ public class Move_Character : MonoBehaviour {
 
 
     #region Atributos Modificáveis
-    [Header("Propriedades de Movimentação")]
     [SerializeField]
     [Range(10, 20)]
     float Sensibilidade; //Sensibilidade do mouse
@@ -30,7 +29,7 @@ public class Move_Character : MonoBehaviour {
     float TerrainBoundsRight; //Limite do terreno direita
     float TerrainBoundsLeft; //Limite do terreno esquerda
     #endregion
-   
+    // Use this for initialization
     void Start () {
 
         #region Encontrar Elementos Principais
@@ -51,7 +50,7 @@ public class Move_Character : MonoBehaviour {
 
     }
 
-    
+    // Update is called once per frame
     void Update () {
 
 

@@ -39,10 +39,14 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.19356956, g: 0.24042505, b: 0.7065859, a: 1}
 =======
   m_IndirectSpecularColor: {r: 0.017030628, g: 0.020938175, b: 0.028618326, a: 1}
 >>>>>>> 05b9a6debb061c8d99f2343f0e448675d85a7120
+=======
+  m_IndirectSpecularColor: {r: 0.1935076, g: 0.24012092, b: 0.7056421, a: 1}
+>>>>>>> parent of 181cbec... SpellCaster[008]
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -117,100 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &8906373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8906377}
-  - component: {fileID: 8906376}
-  - component: {fileID: 8906375}
-  - component: {fileID: 8906374}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &8906374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8906373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &8906375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8906373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &8906376
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8906373}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &8906377
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8906373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 300798172}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &42620133
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +357,7 @@ MonoBehaviour:
   MinWaveSpawn: 0
   MaxWaveSpawn: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &300798171
 =======
 --- !u!1 &341893467
@@ -590,6 +501,8 @@ Transform:
     type: 3}
   m_PrefabInternal: {fileID: 488288939}
 >>>>>>> 05b9a6debb061c8d99f2343f0e448675d85a7120
+=======
+>>>>>>> parent of 181cbec... SpellCaster[008]
 --- !u!1 &463430548
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31935c61f909404cbd4a46aa666edb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 300798173}
   GameScore: 0
   ComboCounter: 0
 --- !u!4 &860887794
@@ -851,6 +763,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 582647665}
   m_Enabled: 1
+<<<<<<< HEAD
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.8437388, b: 0.5896226, a: 1}
@@ -883,6 +796,16 @@ Light:
   m_ShadowAngle: 0
 --- !u!4 &582647667
 Transform:
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d930f283615166540a907963d378f7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameScore: 0
+  ComboCounter: 0
+--- !u!1 &899354736
+GameObject:
+>>>>>>> parent of 181cbec... SpellCaster[008]
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1307,6 +1230,7 @@ Transform:
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1382486938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1293,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 181cbec... SpellCaster[008]
 --- !u!1 &1646786400
 =======
 --- !u!1 &1359652234
@@ -1701,7 +1627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75d411bd2673bb418060795709c6c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 0}
   GameScore: 0
   ComboCounter: 0
   Player_Lifes: 3

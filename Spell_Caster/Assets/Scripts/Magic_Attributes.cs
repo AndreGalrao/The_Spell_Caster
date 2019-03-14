@@ -7,7 +7,6 @@ using UnityEngine;
 public class Magic_Attributes : ScriptableObject {
 
     //Atributos da magia
-    [Header("Propriedades da Magia")]
     public int MagicIndex;
     public string MagicName;
     public string MagicType;

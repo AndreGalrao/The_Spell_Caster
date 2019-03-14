@@ -7,7 +7,6 @@ using UnityEngine;
 public class Enemy_Attributes : ScriptableObject {
 
     //Atributos do inimigo
-    [Header("Propriedades do Inimigo")]
     public Magic_Attributes EnemyType;
     public float EnemyHP;
     public GameObject EnemyModel;

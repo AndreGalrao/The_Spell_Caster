@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Status", menuName = "Create Status")]
 public class Status_Attributes : ScriptableObject {
 
-    [Header("Propriedades do Status")]
+    
     public GameObject StatusParticle;
     public float Speed_Penalty_Multiplier;
     public int Damage_OverTime;
