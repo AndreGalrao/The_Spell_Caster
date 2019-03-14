@@ -41,6 +41,7 @@ RenderSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.19356956, g: 0.24042505, b: 0.7065859, a: 1}
 =======
   m_IndirectSpecularColor: {r: 0.017030628, g: 0.020938175, b: 0.028618326, a: 1}
@@ -48,6 +49,9 @@ RenderSettings:
 =======
   m_IndirectSpecularColor: {r: 0.1935076, g: 0.24012092, b: 0.7056421, a: 1}
 >>>>>>> parent of 181cbec... SpellCaster[008]
+=======
+  m_IndirectSpecularColor: {r: 0.1935076, g: 0.24012092, b: 0.7056421, a: 1}
+>>>>>>> parent of 05b9a6d... Cenário/Particulas
 =======
   m_IndirectSpecularColor: {r: 0.1935076, g: 0.24012092, b: 0.7056421, a: 1}
 >>>>>>> parent of 05b9a6d... Cenário/Particulas
@@ -292,6 +296,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &300798171
 =======
 --- !u!1 &341893467
@@ -437,6 +442,8 @@ Transform:
 >>>>>>> 05b9a6debb061c8d99f2343f0e448675d85a7120
 =======
 >>>>>>> parent of 181cbec... SpellCaster[008]
+=======
+>>>>>>> parent of 05b9a6d... Cenário/Particulas
 =======
 >>>>>>> parent of 05b9a6d... Cenário/Particulas
 --- !u!1 &463430548
@@ -646,6 +653,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 43.3, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &582647665
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +816,9 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &639150171
+=======
+--- !u!4 &712909704 stripped
+>>>>>>> parent of 05b9a6d... Cenário/Particulas
 =======
 --- !u!4 &712909704 stripped
 >>>>>>> parent of 05b9a6d... Cenário/Particulas
@@ -1095,6 +1106,7 @@ Prefab:
 Prefab:
   m_ObjectHideFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
@@ -1294,6 +1306,8 @@ Transform:
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> parent of 05b9a6d... Cenário/Particulas
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
@@ -1357,6 +1371,9 @@ Transform:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd352e2ef3c2914f838c4182d3d806e, type: 3}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD
+>>>>>>> parent of 05b9a6d... Cenário/Particulas
+=======
 >>>>>>> parent of 05b9a6d... Cenário/Particulas
 --- !u!1 &1370042018
 GameObject:
