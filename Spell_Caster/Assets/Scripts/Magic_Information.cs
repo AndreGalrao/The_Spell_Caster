@@ -5,11 +5,18 @@ using UnityEngine;
 public class Magic_Information : MonoBehaviour {
 
     //Script para ser atrelado ao modelo com informações do scriptable
-    public string LaunchedMagicTypeEff; 
+
+    [HideInInspector]
+    public string LaunchedMagicTypeEff;
+    [HideInInspector]
     public string LaunchedMagicTypeImm;
+    [HideInInspector]
     public float LaunchedBaseDamage;
+    [HideInInspector]
     public float LaunchedLifespan;
+    [HideInInspector]
     public Status_Attributes LaunchedStatus;
+
 
     private void Update()
     {

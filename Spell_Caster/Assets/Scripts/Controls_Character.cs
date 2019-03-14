@@ -12,7 +12,9 @@ public class Controls_Character : MonoBehaviour {
     //Não é possivel instanciar uma váriavel usando outra variável de instancia, é preciso usar um construtor para
     //pegar todas as informações daquela variavel instanciada
     //E assim, criar uma lista que irá ter os objetos e seus valores.
+    [HideInInspector]
     public List<MagicMethods> magicMethods = new List<MagicMethods>();
+    [Header("Biblioteca de Magias")]
     public MagicDictionary MagicLibrary;
     public IDictionary<string, MagicMethods> MagicDictionary
     {
@@ -42,6 +44,7 @@ public class Controls_Character : MonoBehaviour {
         Earth
     };
 
+    [HideInInspector]
     public Magias MagiaAtual = Magias.None;
 
 

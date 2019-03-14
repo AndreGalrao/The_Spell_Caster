@@ -6,12 +6,15 @@ using UnityEngine;
 public class Enemy_Spawn : MonoBehaviour {
 
 
+    [HideInInspector]
     public List<GameObject> screenenemylist = new List<GameObject>();
 
     int EnemyQuantity;
+    [HideInInspector]
     public int StartWave;
     public float SpawnInterval = 2;
 
+    [Header("Bestiário")]
     public EnemyDictionary EnemyLibrary; //Cria uma váriavel para puxar e armazenar inimigos
     public IDictionary<string, EnemyMethods> Enemy_Dictionary //Cria um dicionário serializável com String e o método construtor
         //que pega todos os atributos dos inimigos
@@ -20,9 +23,11 @@ public class Enemy_Spawn : MonoBehaviour {
         set { EnemyLibrary.CopyFrom(value); }
     }
 
+    [Header("Número mínimo de monstros por wave")]
     [SerializeField]
     int MinWaveSpawn;
 
+    [Header("Número máximo de monstros por wave")]
     [SerializeField]
     int MaxWaveSpawn;
 
