@@ -19,18 +19,20 @@ public class Controls_Character : MonoBehaviour {
         get { return MagicLibrary; }
         set { MagicLibrary.CopyFrom(value); }
     }
-        
+
+
 
     
 
-
-
+    #region Armazena as teclas
     //Armazena cada tecla que está associada a uma magia
     string _waterKey;
     string _fireKey;
     string _airKey;
     string _thunderKey;
     string _earthKey;
+    #endregion
+
 
     public enum Magias
     {

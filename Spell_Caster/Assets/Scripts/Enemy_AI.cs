@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour {
 
+    #region Variaveis de outros scripts
     Enemy_AI_Status statusinfo;
     Enemy_Spawn infoenemy;
     Enemy_Waves infowaves;
+    #endregion
 
+    #region FloatPenaltys
     float SpeedPenalty = 1;
     float DamageOverTime;
+    #endregion
 
+    #region MagicThings
     [HideInInspector]
     public Status_Dictionary statusdic;
     public Status_Attributes current_status;
     Player_LifeSettings infolifes;
     Game_PointComboControl infopoints;
+    #endregion
+
+    #region EnemyThings
     Rigidbody EnemyPhysics;
 
     GameObject Player;
@@ -25,38 +33,40 @@ public class Enemy_AI : MonoBehaviour {
     float _destroyAfterPass;
 
     float multiplicadordeefetividade = 1;
+    #endregion
 
+    #region StatusThings
     Status_Attributes Burned;
     Status_Attributes Wet;
     Status_Attributes Marked;
     Status_Attributes Slowed;
     Status_Attributes Paralyzed;
     Status_Attributes None;
+    #endregion
 
-    //Status statusbrn = 
-
-    // Use this for initialization
     void Start () {
 
-        
-
-
+        #region Finds
         //Procura o objeto do Spawn do inimigo e pega os scripts.
         infoenemy = GameObject.Find("EnemySpawnPoint").GetComponent<Enemy_Spawn>();
         infowaves = GameObject.Find("WaveController").GetComponent<Enemy_Waves>();
         infolifes = GameObject.Find("Player").GetComponent<Player_LifeSettings>();
         infopoints = GameObject.Find("MasterControl").GetComponent<Game_PointComboControl>();
         statusdic = GameObject.Find("StatusControl").GetComponent<Status_Dictionary>();
-        
         //Procura o jogador para comparar mais pra frente a posição
         Player = GameObject.Find("Player");
+        #endregion
+
+        #region EnemyAssociations
         _enemyHP = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyHP; //Coloca no dicionario o nome do inimigo e puxa o HP
         _destroyAfterPass = infoenemy.EnemyLibrary[gameObject.name].enemy.DestroyDistance;
         gameObject.tag = "Enemy";
 
         EnemyPhysics = gameObject.GetComponent<Rigidbody>();
         EnemyPhysics.mass = infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyWeight;
+        #endregion
 
+        #region StatusAssociations
         Burned = statusdic.StatusLibrary["Burn"].status;
         Wet = statusdic.StatusLibrary["Soak"].status;
         Marked = statusdic.StatusLibrary["Mark"].status;
@@ -71,13 +81,15 @@ public class Enemy_AI : MonoBehaviour {
 
         //print(gameObject.name);
         //infoenemy.EnemyLibrary[gameObject.name];
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        #endregion
+    }
+
+
+    void Update () {
 
 
 
+        #region EnemyMovement
         //print(infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType);
         /* O nome do inimigo vai ser o nome de sua chave no dicionário.
          * Ele vai colocar esse nome no game object que irá ser instanciado
@@ -85,10 +97,12 @@ public class Enemy_AI : MonoBehaviour {
          * ele vai pegar as propriedades
          * toda chave do dicionário tá associada a um scriptable object */
 
-       
+
         gameObject.transform.position -= transform.forward * infoenemy.EnemyLibrary[gameObject.name].enemy.EnemySpeed 
           * SpeedPenalty * Time.deltaTime;
+        #endregion
 
+        #region EnemyDeathConditions
         //Compara o Z do inimigo com o Z do personagem, se o Z do inimigo for menor, significa que 
         //O inimigo passou o player, e aí já destrói.
         if (gameObject.transform.position.z < Player.transform.position.z - _destroyAfterPass)
@@ -104,9 +118,10 @@ public class Enemy_AI : MonoBehaviour {
             
             //Criar um método próprio para destruir e lista
         }
+        #endregion
 
-        
-	}
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -114,6 +129,7 @@ public class Enemy_AI : MonoBehaviour {
         //Como não é possivel atribuir uma palavra a um objeto, foi utilizado tag.
         //Tag tem que estar com o mesmo nome que o "MagicType"
 
+        #region SuperEffective
         //Detectar colisões somente quando tiver uma tag com "Magic"
         if (collision.gameObject.tag == "Magic")
         {
@@ -130,7 +146,10 @@ public class Enemy_AI : MonoBehaviour {
                 Formuladedano(collision, multiplicadordeefetividade);
                 StatusChance(collision.gameObject.GetComponent<Magic_Information>().LaunchedStatus);
             }
+            #endregion
 
+
+        #region NotEffective
             //Se por acaso a magia tiver imunidade ao mesmo tipo do inimigo, não causa dano.
             //Ex: Fire, tem Water, se Water for igual ao tipo do inimigo (Water), Fire não dará dano.
             string Immunity = collision.gameObject.GetComponent<Magic_Information>().LaunchedMagicTypeImm;
@@ -143,7 +162,10 @@ public class Enemy_AI : MonoBehaviour {
                 
                 
             }
+            #endregion
 
+
+        #region NeutralEffective
             //Caso a efetividade não exista, e não é imunidade, ele considera que é qualquer magia que acertou.
             if (Effectiveness != infoenemy.EnemyLibrary[gameObject.name].enemy.EnemyType.MagicType)
             {
@@ -151,12 +173,13 @@ public class Enemy_AI : MonoBehaviour {
                 multiplicadordeefetividade = 0.1f;
                 Formuladedano(collision, multiplicadordeefetividade);
             }
+            #endregion
 
-       
+
         }
 
-        
-        
+
+
     }
 
     void Formuladedano(Collision magic, float mult)
