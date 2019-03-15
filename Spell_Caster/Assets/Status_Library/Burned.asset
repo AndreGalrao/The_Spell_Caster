@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dbe35d648e90f4c9b7d2affd2b57ba, type: 3}
   m_Name: Burned
   m_EditorClassIdentifier: 
-  StatusParticle: {fileID: 0}
+  StatusParticle: {fileID: 1285462444198504, guid: 8e37f99fa6c8c9843908b630f77531b6,
+    type: 2}
   Speed_Penalty_Multiplier: 0.3
   Damage_OverTime: 2
   StatusEffect: Burned

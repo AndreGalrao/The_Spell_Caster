@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dbe35d648e90f4c9b7d2affd2b57ba, type: 3}
   m_Name: Marked
   m_EditorClassIdentifier: 
-  StatusParticle: {fileID: 0}
+  StatusParticle: {fileID: 1652405945464792, guid: 71abced0022ec3e429b40b76a17bc5c9,
+    type: 2}
   Speed_Penalty_Multiplier: 0.5
   Damage_OverTime: 0
   StatusEffect: Marked

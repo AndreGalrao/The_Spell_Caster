@@ -42,6 +42,29 @@ public class Enemy_AI : MonoBehaviour {
     Status_Attributes Slowed;
     Status_Attributes Paralyzed;
     Status_Attributes None;
+
+    GameObject burntstatus;
+    GameObject wetedstatus;
+    GameObject markdstatus;
+    GameObject slowdstatus;
+    GameObject prlststatus;
+    GameObject nonetstatus;
+
+
+    public enum StatusVisual
+    {
+        Burned,
+        Wet,
+        Marked,
+        Slowed,
+        Paralyzed,
+        None
+    }
+
+    [HideInInspector]
+    public StatusVisual statusapp;
+
+
     #endregion
 
     void Start () {
@@ -53,6 +76,7 @@ public class Enemy_AI : MonoBehaviour {
         infolifes = GameObject.Find("Player").GetComponent<Player_LifeSettings>();
         infopoints = GameObject.Find("MasterControl").GetComponent<Game_PointComboControl>();
         statusdic = GameObject.Find("StatusControl").GetComponent<Status_Dictionary>();
+        statusinfo = GameObject.Find("StatusControl").GetComponent<Enemy_AI_Status>();
         //Procura o jogador para comparar mais pra frente a posição
         Player = GameObject.Find("Player");
         #endregion
@@ -73,6 +97,13 @@ public class Enemy_AI : MonoBehaviour {
         Slowed = statusdic.StatusLibrary["Slow"].status;
         Paralyzed = statusdic.StatusLibrary["Paralyze"].status;
         None = statusdic.StatusLibrary["Normal"].status;
+
+        burntstatus = statusdic.StatusLibrary["Burn"].status.StatusParticle;
+        wetedstatus = statusdic.StatusLibrary["Soak"].status.StatusParticle;
+        markdstatus = statusdic.StatusLibrary["Mark"].status.StatusParticle;
+        slowdstatus = statusdic.StatusLibrary["Slow"].status.StatusParticle;
+        prlststatus = statusdic.StatusLibrary["Paralyze"].status.StatusParticle;
+        nonetstatus = statusdic.StatusLibrary["Normal"].status.StatusParticle;
 
         current_status = statusdic.StatusLibrary["Normal"].status; //O status atual do inimigo vai ser pego da biblioteca e o atributo dela
 
@@ -214,6 +245,8 @@ public class Enemy_AI : MonoBehaviour {
             SpeedPenalty = Burned.Speed_Penalty_Multiplier;
             DamageOverTime = Burned.Damage_OverTime;
             StartCoroutine(CreateStatus(DamageOverTime));
+            statusapp = StatusVisual.Burned;
+            ChangeAppearance(gameObject);
         }
 
         if (Effect == Wet.StatusEffect)
@@ -221,6 +254,8 @@ public class Enemy_AI : MonoBehaviour {
             SpeedPenalty = Wet.Speed_Penalty_Multiplier;
             DamageOverTime = Wet.Damage_OverTime;
             StartCoroutine(CreateStatus(DamageOverTime));
+            statusapp = StatusVisual.Wet;
+            ChangeAppearance(gameObject);
         }
 
         if (Effect == Paralyzed.StatusEffect)
@@ -228,6 +263,8 @@ public class Enemy_AI : MonoBehaviour {
             SpeedPenalty = Paralyzed.Speed_Penalty_Multiplier;
             DamageOverTime = Paralyzed.Damage_OverTime;
             StartCoroutine(CreateStatus(DamageOverTime));
+            statusapp = StatusVisual.Paralyzed;
+            ChangeAppearance(gameObject);
         }
 
         if (Effect == Slowed.StatusEffect)
@@ -235,6 +272,8 @@ public class Enemy_AI : MonoBehaviour {
             SpeedPenalty = Slowed.Speed_Penalty_Multiplier;
             DamageOverTime = Slowed.Damage_OverTime;
             StartCoroutine(CreateStatus(DamageOverTime));
+            statusapp = StatusVisual.Slowed;
+            ChangeAppearance(gameObject);
         }
 
         if (Effect == Marked.StatusEffect)
@@ -242,12 +281,16 @@ public class Enemy_AI : MonoBehaviour {
             SpeedPenalty = Marked.Speed_Penalty_Multiplier;
             DamageOverTime = Marked.Damage_OverTime;
             StartCoroutine(CreateStatus(DamageOverTime));
+            statusapp = StatusVisual.Marked;
+            ChangeAppearance(gameObject);
         }
 
         if (Effect == None.StatusEffect)
         {
             SpeedPenalty = None.Speed_Penalty_Multiplier;
             DamageOverTime = None.Damage_OverTime;
+            statusapp = StatusVisual.None;
+            ChangeAppearance(gameObject);
 
         }
     }
@@ -268,7 +311,41 @@ public class Enemy_AI : MonoBehaviour {
 
     }
 
+    public void ChangeAppearance(GameObject enemy)
+    {
+
+        switch (statusapp)
+        {
+            case StatusVisual.Burned:
+                burntstatus.gameObject.transform.position = enemy.gameObject.transform.position + new Vector3(0, 10, 0);
+                burntstatus.SetActive(statusapp == StatusVisual.Burned);
+                break;
+
+            case StatusVisual.Wet:
+                wetedstatus.gameObject.transform.position = enemy.gameObject.transform.position + new Vector3(0, 10, 0);
+                wetedstatus.SetActive(statusapp == StatusVisual.Wet);
+                break;
+
+            case StatusVisual.Marked:
+                markdstatus.gameObject.transform.position = enemy.gameObject.transform.position + new Vector3(0, 10, 0);
+                markdstatus.SetActive(statusapp == StatusVisual.Marked);
+                break;
+
+            case StatusVisual.Slowed:
+                slowdstatus.gameObject.transform.position = enemy.gameObject.transform.position + new Vector3(0, 10, 0);
+                slowdstatus.SetActive(statusapp == StatusVisual.Slowed);
+                break;
+
+            case StatusVisual.Paralyzed:
+                prlststatus.gameObject.transform.position = enemy.gameObject.transform.position + new Vector3(0, 10, 0);
+                prlststatus.SetActive(statusapp == StatusVisual.Paralyzed);
+                break;
+
+            case StatusVisual.None:
+                break;
+        }
+    }
 
 
-    
+
 }

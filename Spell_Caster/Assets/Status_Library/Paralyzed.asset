@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dbe35d648e90f4c9b7d2affd2b57ba, type: 3}
   m_Name: Paralyzed
   m_EditorClassIdentifier: 
-  StatusParticle: {fileID: 0}
+  StatusParticle: {fileID: 1085183783663078, guid: 362364a84f226684ba61dbb75c0d53f0,
+    type: 2}
   Speed_Penalty_Multiplier: 0
   Damage_OverTime: 0
   StatusEffect: Paralyzed
