@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.037597764, g: 0.04614915, b: 0.06323039, a: 1}
+  m_IndirectSpecularColor: {r: 0.037856985, g: 0.046375018, b: 0.06356267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1982,8 +1982,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.8437388, b: 0.5896226, a: 1}
-  m_Intensity: 2
-  m_Range: 5
+  m_Intensity: 8
+  m_Range: 3
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -2001,7 +2001,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2016,7 +2016,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341893467}
   m_LocalRotation: {x: -0, y: -0.37811115, z: -0, w: 0.92576027}
-  m_LocalPosition: {x: -0.000017503276, y: 0.6558437, z: 0.057155445}
+  m_LocalPosition: {x: -0.000017503276, y: 0.42, z: 0.057155445}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 141403106}
@@ -3710,7 +3710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4197109225661052, guid: 58ec9416944760548804d7d3dd2f3d9f, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 198437659934943746, guid: 58ec9416944760548804d7d3dd2f3d9f,
         type: 2}
@@ -16256,8 +16256,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.8437388, b: 0.5896226, a: 1}
-  m_Intensity: 1
-  m_Range: 12
+  m_Intensity: 1.25
+  m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -16275,7 +16275,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -26438,7 +26438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4197109225661052, guid: 58ec9416944760548804d7d3dd2f3d9f, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 198437659934943746, guid: 58ec9416944760548804d7d3dd2f3d9f,
         type: 2}
@@ -26911,7 +26911,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e968922808cd0194fb2ea790c7195263, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26937,7 +26937,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646786400}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d595a0dbc601c704fa5d229be94c849f, type: 3}
 --- !u!4 &1646786404
 Transform:
   m_ObjectHideFlags: 0
@@ -28933,8 +28933,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.8437388, b: 0.5896226, a: 1}
-  m_Intensity: 1
-  m_Range: 12
+  m_Intensity: 1.5
+  m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -28952,7 +28952,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
